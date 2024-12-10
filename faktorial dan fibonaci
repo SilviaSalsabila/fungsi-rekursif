@@ -1,0 +1,48 @@
+def faktorial(n):
+    if n == 0 or n == 1:
+        print(f"faktorial({n}) = 1")
+        return 1
+    else:
+        result = n * faktorial(n - 1)
+        print(f"faktorial({n}) = {n} * faktorial({n - 1}) = {result}")
+        return result
+
+def fibonacci(n):
+    if n < 1:
+        return "Fibonacci tidak dapat dihitung"
+    elif n == 1 or n == 2:
+        print(f"fibonacci({n}) = 1")
+        return 1
+    else:
+        result = fibonacci(n - 1) + fibonacci(n - 2)
+        print(f"fibonacci({n}) = fibonacci({n - 1}) + fibonacci({n - 2}) = {result}")
+        return result
+
+def main():
+    while True:
+        print("\nPilih opsi:")
+        print("1. Hitung Faktorial")
+        print("2. Hitung Fibonacci")
+        print("3. Keluar")
+        
+        pilihan = input("Masukkan pilihan (1/2/3): ")
+        
+        if pilihan == '1':
+            a = int(input("Masukkan nilai yang akan dicari (faktorial): "))
+            hasil_faktorial = faktorial(a)
+            print(f"Nilai dari {a}! adalah {hasil_faktorial}")
+        
+        elif pilihan == '2':
+            b = int(input("Masukkan nilai yang akan dicari (Fibonacci): "))
+            hasil_fibonacci = fibonacci(b)
+            print(f"Nilai Fibonacci dari {b} adalah {hasil_fibonacci}")
+        
+        elif pilihan == '3':
+            print("Terima kasih! Program selesai.")
+            break
+        
+        else:
+            print("Pilihan tidak valid. Silakan pilih 1 atau 2.")
+
+if __name__ == "__main__":
+    main()
